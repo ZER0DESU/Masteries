@@ -1,7 +1,7 @@
 var treeNames = [
-    "Ferocity",
-    "Cunning",
-    "Resolve",
+    "Offence",
+    "Defence",
+    "Utility",
 ]; // Used also for purposes of the CSS, so the names have to match.
 var treeOffsets = [
     0,
@@ -13,7 +13,7 @@ var treeOffsets = [
 // Then add a new file with variable "languagePack" in it, and you won't have to change a thing in calculator.js
 // Remember to add that file in index.html
 var ENGLISH = {
-    tree_names: ["Ferocity", "Cunning", "Resolve"],
+    tree_names: ["Offence", "Defence", "Utility"],
     rank: "Rank",
     requires: "Requires",
     points_in: "points in",
@@ -23,7 +23,7 @@ var ENGLISH = {
 var LANGUAGE = (typeof languagePack === 'undefined') ? ENGLISH : languagePack ;
 
 var MAX_POINTS = 30;
-var TIER_REQS = [0, 5, 6, 11, 12, 17];
+var TIER_REQS = [0, 6, 6, 12, 12, 18];
 var TREE_OFFSET = 276;
 var SPACING = {margin_left: 44, margin_top: 20, margin_keystone: 35, spacing_x: 13, spacing_y: 20}
 var BUTTON_SIZE = 54;
@@ -506,7 +506,7 @@ function updateLink() {
 // mastery codes or an index increase. We greedily take masteries until the next
 // one would put us over capacity, at which point we flush the buffer. You will
 // always flush at the end of a tree.
-var maxbits = 5;
+var maxbits = 6;
 var exportChars = "WvlgUCsA7pGZ3zSjakbP2x0mTB6htH8JuKMq1yrnwEQDLY5IVNXdcioe9fF4OR_-";
 var bitlen = function(tree, index) {
     if (data[tree][index] == undefined)
